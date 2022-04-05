@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<provider android:name="androidx.core.content.FileProvider"
+    android:authorities="com.dev.gradation.fileprovider"
+    android:exported="false"
+    android:grantUriPermissions="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths" />
+    <path>
+        <root-path name="root_path" path="."/>
+    </path>
+</provider>
+<!--<root-path/> ：代表设备的根目录new File("/")-->
+<!--<files-path/> : 代表context.getFilesDir()-->
+<!--<cache-path/> : 代表context.getCacheDir()-->
+<!--<external-path/> : 代表Environment.getExternalStorageDirectory()-->
+<!--<external-files-path/> : 代表context.getExternalFilesDirs()-->
+<!--<external-cache-path/> : 代表getExternalCacheDirs()-->
+<!--path节点支持name和path两个属性，配置了path属性就相当于在相应路径下子目录，-->

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dev.user">
+
+    <application>
+        <activity
+            android:name=".setting.PasswordSettingActivity"
+            android:label="@string/modify_password"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".profile.UserProfileActivity"
+            android:label="@string/profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".signin.SignInActivity"
+            android:label="@string/register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".selector.LoginSelectActivity"
+            android:label="登录类型选择"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".people.PeopleActivity"
+            android:label=" "
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

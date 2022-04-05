@@ -1,0 +1,12 @@
+include ':question'
+include ':forum'
+include ':base_ui'
+include ':book'
+include ':admin'
+include ':player'
+include ':main'
+include ':user'
+include ':common'
+include ':app'
+include ':news'
+rootProject.name = "GradationAndroid"

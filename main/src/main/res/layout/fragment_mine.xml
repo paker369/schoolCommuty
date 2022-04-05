@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivUserHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_user_head_default" />
+
+    <TextView
+        android:id="@+id/tvLoginHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/immediately_sign_in"
+        android:textColor="#333"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvLoginHintDes"
+        app:layout_constraintStart_toEndOf="@+id/ivUserHead"
+        app:layout_constraintTop_toTopOf="@+id/ivUserHead" />
+
+    <TextView
+        android:id="@+id/tvLoginHintDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/sign_in_hint_des"
+        android:textColor="#666"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivUserHead"
+        app:layout_constraintStart_toEndOf="@id/ivUserHead"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginHint" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/loginGroup"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="ivUserHead,tvLoginHintDes,tvLoginHint"
+        app:layout_constraintBottom_toBottomOf="@+id/ivUserHead"
+        app:layout_constraintTop_toTopOf="@+id/ivUserHead" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="24dp"
+        android:background="#22000000"
+        app:layout_constraintTop_toBottomOf="@+id/ivUserHead" />
+
+    <TextView
+        android:id="@+id/phoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="4dp"
+        android:text="@string/phone"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_phone"
+        app:layout_constraintStart_toStartOf="@+id/ivUserHead"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+    <TextView
+        android:id="@+id/phoneValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textColor="#222"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/phoneTextView"
+        tools:text="1889999998" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="16dp"
+        android:background="#22000000"
+        app:layout_constraintTop_toBottomOf="@+id/phoneTextView" />
+
+    <FrameLayout
+        android:id="@+id/dynamicContainer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="@+id/ivUserHead"
+        app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:drawablePadding="4dp"
+            android:text="@string/my_dynamic"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            app:srcCompat="@drawable/ic_arrow_right" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/settingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="@+id/ivUserHead"
+        app:layout_constraintTop_toBottomOf="@+id/favoriteContainer">
+
+        <TextView
+            android:id="@+id/settingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:drawablePadding="4dp"
+            android:text="@string/setting"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            app:srcCompat="@drawable/ic_arrow_right" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/userProfileGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="dynamicContainer,settingContainer,phoneTextView,phoneValueTextView,divider1,divider2,btnLogin,favoriteContainer"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#22000000"
+        app:layout_constraintTop_toBottomOf="@+id/dynamicContainer" />
+
+    <FrameLayout
+        android:id="@+id/favoriteContainer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="@+id/ivUserHead"
+        app:layout_constraintTop_toBottomOf="@+id/divider3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:drawablePadding="4dp"
+            android:text="收藏点赞"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            app:srcCompat="@drawable/ic_arrow_right" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/adminTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:background="?colorAccent"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/admin_page"
+        android:textColor="#222"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/settingContainer" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/adminGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="divider3,adminTextView"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

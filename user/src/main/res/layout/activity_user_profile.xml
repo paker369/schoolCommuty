@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".profile.UserProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_height="50dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_bg_gray_top_corner_13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--用户头像-->
+            <FrameLayout
+                android:id="@+id/user_head_container"
+                style="@style/user_profile_container"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    style="@style/user_profile_name"
+                    android:text="@string/head" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/userHeadImage"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="15dp"
+                    tools:src="@drawable/ic_user_head_body" />
+            </FrameLayout>
+
+            <!--姓名-->
+            <FrameLayout
+                android:id="@+id/user_name_container"
+                style="@style/user_profile_container"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <TextView
+                    style="@style/user_profile_name"
+                    android:text="@string/name" />
+
+                <EditText
+                    android:id="@+id/userNameText"
+                    style="@style/user_profile_value"
+                    android:layout_width="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:imeOptions="actionSend"
+                    android:inputType="textPersonName"
+                    android:maxLength="16"
+                    tools:text="admin" />
+            </FrameLayout>
+
+            <!--昵称-->
+            <FrameLayout
+                android:id="@+id/user_nickname_container"
+                style="@style/user_profile_container"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <TextView
+                    style="@style/user_profile_name"
+                    android:text="@string/nickname" />
+
+                <EditText
+                    android:id="@+id/nicknameText"
+                    style="@style/user_profile_value"
+                    android:layout_width="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:imeOptions="actionSend"
+                    android:inputType="textPersonName"
+                    android:maxLength="16"
+                    tools:text="史蒂夫" />
+            </FrameLayout>
+            <!--学校-->
+            <FrameLayout
+                android:id="@+id/school_container"
+                style="@style/user_profile_container"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <TextView
+                    style="@style/user_profile_name"
+                    android:text="@string/school" />
+
+                <EditText
+                    android:id="@+id/schoolText"
+                    style="@style/user_profile_value"
+                    android:layout_width="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:imeOptions="actionSend"
+                    android:inputType="textPersonName"
+                    android:maxLength="16"
+                    tools:text="蓝翔技校" />
+            </FrameLayout>
+            <!--性别-->
+            <FrameLayout
+                android:id="@+id/user_gender_container"
+                style="@style/user_profile_container">
+
+                <TextView
+                    style="@style/user_profile_name"
+                    android:text="@string/gender" />
+
+                <TextView
+                    android:id="@+id/genderText"
+                    style="@style/user_profile_value" />
+            </FrameLayout>
+
+            <!--生日-->
+            <FrameLayout
+                android:id="@+id/user_birthday_container"
+                style="@style/user_profile_container">
+
+                <TextView
+                    style="@style/user_profile_name"
+                    android:text="@string/birthday" />
+
+                <TextView
+                    android:id="@+id/birthdayText"
+                    style="@style/user_profile_value" />
+            </FrameLayout>
+
+            <!--地址-->
+            <FrameLayout
+                android:id="@+id/user_address_container"
+                style="@style/user_profile_container">
+
+                <TextView
+                    style="@style/user_profile_name"
+                    android:text="@string/address" />
+
+                <TextView
+                    android:id="@+id/addressText"
+                    style="@style/user_profile_value" />
+            </FrameLayout>
+
+            <!--修改密码-->
+            <FrameLayout
+                android:id="@+id/user_reset_psw_container"
+                style="@style/user_profile_container">
+
+                <TextView
+                    style="@style/user_profile_name"
+                    android:text="@string/modify_password" />
+
+                <TextView
+                    android:id="@+id/pswText"
+                    style="@style/user_profile_value" />
+            </FrameLayout>
+
+            <!--电话-->
+            <FrameLayout
+                android:id="@+id/user_phone_container"
+                style="@style/user_profile_container"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    style="@style/user_profile_name"
+                    android:text="@string/phone" />
+
+                <TextView
+                    android:id="@+id/phoneText"
+                    style="@style/user_profile_value" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/logoutBtn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="18dp"
+                android:background="#fff"
+                android:gravity="center"
+                android:text="@string/logout"
+                android:textColor="#222"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

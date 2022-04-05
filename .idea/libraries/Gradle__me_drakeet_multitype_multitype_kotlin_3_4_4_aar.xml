@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Gradle: me.drakeet.multitype:multitype-kotlin:3.4.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0dec5570a1659ca59493a759e4e15778/jetified-multitype-kotlin-3.4.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0dec5570a1659ca59493a759e4e15778/jetified-multitype-kotlin-3.4.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0dec5570a1659ca59493a759e4e15778/jetified-multitype-kotlin-3.4.4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/793a8fa4b07298be6a29f035ad662a78/jetified-multitype-kotlin-3.4.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/793a8fa4b07298be6a29f035ad662a78/jetified-multitype-kotlin-3.4.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/793a8fa4b07298be6a29f035ad662a78/jetified-multitype-kotlin-3.4.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f7c83108228d68bdc22a51089bfe69da/jetified-multitype-kotlin-3.4.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f7c83108228d68bdc22a51089bfe69da/jetified-multitype-kotlin-3.4.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f7c83108228d68bdc22a51089bfe69da/jetified-multitype-kotlin-3.4.4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.drakeet.multitype/multitype-kotlin/3.4.4/abef064b0d0da08ad2c5bfc4deead2a7db508558/multitype-kotlin-3.4.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.drakeet.multitype/multitype-kotlin/3.4.4/6d787f62e5596ddd7f552458826c081c97cd29b4/multitype-kotlin-3.4.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

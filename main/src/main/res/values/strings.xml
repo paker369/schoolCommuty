@@ -1,0 +1,8 @@
+<resources>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">论坛</string>
+    <string name="title_notifications">动态</string>
+    <string name="title_mine">我的</string>
+    <string name="admin_page">管理员页面</string>
+</resources>

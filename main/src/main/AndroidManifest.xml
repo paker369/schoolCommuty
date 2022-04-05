@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dev.main">
+
+    <application>
+        <activity android:name=".ui.dynamic.DynamicDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.dynamic.DynamicActivity"
+            android:label="我的动态"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingActivity"
+            android:label="设置"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".insert.PublishActivity"
+            android:label="发布动态"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.GradationAndroid.ActionBar">
+
+        </activity>
+
+
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+          >
+
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dev.book">
+
+    <application>
+        <activity
+            android:name=".activity.BookPublishActivity"
+            android:label="发布"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BookReadActivity"
+            android:label="学习"
+            android:screenOrientation="portrait" />
+        <activity android:name=".BookDetailActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GradationAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/GradationAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin/GradationAndroid.admin.iml" filepath="$PROJECT_DIR$/.idea/modules/admin/GradationAndroid.admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GradationAndroid.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GradationAndroid.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/publish/GradationAndroid.base_ui.iml" filepath="$PROJECT_DIR$/.idea/modules/publish/GradationAndroid.base_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/book/GradationAndroid.book.iml" filepath="$PROJECT_DIR$/.idea/modules/book/GradationAndroid.book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/GradationAndroid.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/GradationAndroid.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Forum/GradationAndroid.forum.iml" filepath="$PROJECT_DIR$/.idea/modules/Forum/GradationAndroid.forum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/main/GradationAndroid.main.iml" filepath="$PROJECT_DIR$/.idea/modules/main/GradationAndroid.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/news/GradationAndroid.news.iml" filepath="$PROJECT_DIR$/.idea/modules/news/GradationAndroid.news.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/player/GradationAndroid.player.iml" filepath="$PROJECT_DIR$/.idea/modules/player/GradationAndroid.player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/question/GradationAndroid.question.iml" filepath="$PROJECT_DIR$/.idea/modules/question/GradationAndroid.question.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/user/GradationAndroid.user.iml" filepath="$PROJECT_DIR$/.idea/modules/user/GradationAndroid.user.iml" />
+    </modules>
+  </component>
+</project>

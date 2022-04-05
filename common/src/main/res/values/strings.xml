@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">高效学习</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="manager">管理</string>
+    <string name="goto_login">去登录</string>
+    <string name="goto_login_hint">登录之后可以看到动态，以及上传动态</string>
+    <string name="publish_content_hint">请输入内容</string>
+    <string name="publish_title_hint">请输入标题</string>
+    <string name="attachment">附件</string>
+    <string name="address">地址</string>
+
+    <string name="common_camera_not_found">没有发现可以使用的相机</string>
+    <string name="common_permission_denid">获取权限失败，请重新授权。</string>
+    <string name="common_permission_denid_never">权限被永久禁止，请前往设置授权。</string>
+    <string name="common_permission_title">获取权限</string>
+
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="complete">完成</string>
+    <string name="my_dynamic">我的动态</string>
+
+    <string name="mine">我的</string>
+    <string name="publish">发布</string>
+    <string name="setting">设置</string>
+    <string name="publish_category_hint">请输入分类</string>
+</resources>
