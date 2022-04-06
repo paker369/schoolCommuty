@@ -107,6 +107,15 @@ public abstract class BaseActivity<T extends ViewModel> extends AppCompatActivit
         actionBar.setDisplayShowTitleEnabled(true);
     }
 
+    protected void setupToolbar(Toolbar toolbar,String s) {
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setTitle(s);
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {

@@ -49,4 +49,6 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.3.3'
     annotationProcessor "com.alibaba:arouter-compiler:1.5.1"
     annotationProcessor "androidx.room:room-compiler:2.2.6"
+
+    implementation 'com.kongzue.dialog:dialog:2.5.2'
 }

@@ -37,5 +37,6 @@ public class BaseApplication extends Application {
             FirstCommand.command();
             SpUtil.getInstance().save(KEY_FIRST_COMMAND, true);
         }
+
     }
 }

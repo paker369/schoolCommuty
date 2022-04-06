@@ -130,11 +130,18 @@ public class PublishActivity extends BaseActivity<InsertViewModel> {
             binding.attachment.setVisibility(View.GONE);
             binding.title.setHint("请输入问题标题");
             binding.content.setHint("请输入问题描述");
-        } else if (dynamicType.equals("其他网站")) {
+        } else if (dynamicType.equals("书籍分享")) {
             binding.radioGroup.setVisibility(View.GONE);
-            binding.title.setHint("请输入网站名称");
-            binding.content.setHint("请输入网站网址");
-        } else {
+            binding.title.setHint("请输入书籍名称");
+            binding.content.setHint("请输入书籍分享介绍");
+        }else if (dynamicType.equals("闲置")) {
+            binding.radioGroup.setVisibility(View.GONE);
+            binding.title.setHint("请输入闲置名称");
+            binding.content.setHint("请输入闲置详情介绍");
+        }else if (dynamicType.equals("其他")) {
+            binding.radioGroup.setVisibility(View.GONE);
+            binding.title.setHint("请输入你想要的标题");
+            binding.content.setHint("请输入你想要的介绍");
         }
     }
 

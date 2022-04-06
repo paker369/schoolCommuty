@@ -45,7 +45,14 @@ public class ReferListFragment extends BaseFragment<ReferViewModel> {
 
     @Override
     protected void initObserver() {
-        vm.refers.observe(this, adapter::setData);
+        vm.refers.observe(this,  String -> {
+            if (String == null || String.size() == 0) {
+                binding.empty.setVisibility(View.VISIBLE);
+            } else {
+                binding.empty.setVisibility(View.GONE);
+            }
+            adapter.setData(String);
+        });
         Constant.stateChanged.observe(this, o -> {
             vm.loadRefer();
         });

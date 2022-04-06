@@ -42,6 +42,7 @@ public interface ARouterConstant {
         String settingActivity = "/main/settingsActivity";
         String dynamicActivity = "/main/dynamicActivity";
         String dynamicDetailActivity = "/main/dynamicDetailActivity";
+        String ShowActivity = "/main/ShowActivity";
     }
 
     interface Player {

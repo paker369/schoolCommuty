@@ -30,6 +30,13 @@ public class DynamicViewModel extends BaseDetailViewModel {
         }
     }
 
+
+    public void loadDynamic(String type) {
+
+            dynamicList.setValue(dynamicDao().findByType(type));
+
+    }
+
     public void loadQuestions() {
         question.setValue(questionDao().queryAll());
     }

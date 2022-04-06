@@ -55,7 +55,14 @@ public class QuestionListFragment extends BaseFragment<QuestionViewModel> {
 
     @Override
     protected void initObserver() {
-        vm.questions.observe(this, adapter::setData);
+        vm.questions.observe(this,  question -> {
+            if (question == null || question.size() == 0) {
+                binding.empty.setVisibility(View.VISIBLE);
+            } else {
+                binding.empty.setVisibility(View.GONE);
+            }
+            adapter.setData(question);
+        });
         Constant.stateChanged.observe(this, o -> {
             long userId = requireArguments().getLong("userId", -1);
             if (userId == -1) {

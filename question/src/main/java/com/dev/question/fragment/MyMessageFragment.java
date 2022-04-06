@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import com.dev.common.adapter.TabAdapter2;
 import com.dev.common.base.BaseFragment;
 import com.dev.common.utils.ActivityRouter;
+import com.dev.common.utils.FragmentRouter;
 import com.dev.question.R;
 import com.dev.question.databinding.FragmentQuestionBinding;
 import com.dev.question.viewmodel.QuestionViewModel;
@@ -69,11 +70,12 @@ public class MyMessageFragment extends BaseFragment<QuestionViewModel> {
     @Override
     public void onResume() {
         super.onResume();
-        String[] titles = new String[]{"我的提问", "我的回答", "与我相关"};
-        Fragment[] fragments = new Fragment[3];
-        fragments[0] = QuestionListFragment.newInstance(UserSession.getInstance().id());
-        fragments[1] = CommentListFragment.newInstance(1);
-        fragments[2] = ReferListFragment.newInstance(2);
+        String[] titles = new String[]{"书籍分享", "提问", "闲置", "其他"};
+        Fragment[] fragments = new Fragment[4];
+        fragments[0] = FragmentRouter.dynamicFragment("书籍分享");
+        fragments[1] = QuestionListFragment.newInstance(UserSession.getInstance().id());
+        fragments[2] = FragmentRouter.dynamicFragment("闲置");
+        fragments[3] = FragmentRouter.dynamicFragment("其他");
         binding.viewPager.setAdapter(new TabAdapter2(titles, fragments, getChildFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT));
         binding.tabLayout.setupWithViewPager(binding.viewPager);
     }

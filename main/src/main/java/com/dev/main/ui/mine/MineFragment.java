@@ -77,6 +77,20 @@ public class MineFragment extends BaseFragment<MineViewModel> {
         binding.favoriteContainer.setOnClickListener(v -> {
             ActivityRouter.gotoMyFavoriteActivity();
         });
+
+
+//新增
+        binding.myquestionContainer.setOnClickListener(v -> {
+            ActivityRouter.gotoShowActivity(1);
+        });
+
+        binding.myanswerContainer.setOnClickListener(v -> {
+            ActivityRouter.gotoShowActivity(2);
+        });
+
+        binding.myrelatedContainer.setOnClickListener(v -> {
+            ActivityRouter.gotoShowActivity(3);
+        });
     }
 
     @Override

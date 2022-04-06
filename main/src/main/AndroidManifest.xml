@@ -17,6 +17,11 @@
             android:name=".insert.PublishActivity"
             android:label="发布动态"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ShowActivity"
+            android:label="发布动态"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask"

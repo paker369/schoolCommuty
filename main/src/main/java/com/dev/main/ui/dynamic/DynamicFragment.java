@@ -2,6 +2,7 @@ package com.dev.main.ui.dynamic;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class DynamicFragment extends BaseFragment<DynamicViewModel> {
             logChanged(false);
         }
     };
+    private String type;
 
     @Override
     protected void initViewModel() {
@@ -57,6 +59,7 @@ public class DynamicFragment extends BaseFragment<DynamicViewModel> {
         if (bundle != null) {
             userId = bundle.getLong("userId", -1);
             flower = bundle.getBoolean("flower", false);
+            type = bundle.getString("type");
         }
 
         UserSession.addLogListener(l);
@@ -93,12 +96,20 @@ public class DynamicFragment extends BaseFragment<DynamicViewModel> {
         if (resultCode == RESULT_OK && requestCode == 1000) {
             // refresh
             vm.loadDynamic(userId);
+            if(!TextUtils.isEmpty(type)){
+                vm.loadDynamic(type);
+                return;
+            }
         }
     }
 
     @Override
     public void onStart() {
         super.onStart();
+        if(!TextUtils.isEmpty(type)){
+            vm.loadDynamic(type);
+            return;
+        }
         if (flower) {
             vm.loadDynamicFlower(userId);
         } else {
@@ -134,6 +145,10 @@ public class DynamicFragment extends BaseFragment<DynamicViewModel> {
 //            binding.recyclerView.setVisibility(View.GONE);
         }
         vm.loadDynamic(userId);
+        if(!TextUtils.isEmpty(type)){
+            vm.loadDynamic(type);
+            return;
+        }
     }
 
     @Override

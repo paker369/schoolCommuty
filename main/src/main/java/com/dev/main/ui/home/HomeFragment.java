@@ -1,8 +1,10 @@
 package com.dev.main.ui.home;
 
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -18,6 +20,10 @@ import com.dev.main.databinding.FragmentHomeBinding;
 import com.dev.main.search.SearchFragment;
 import com.dev.user.UserSession;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.kongzue.dialog.listener.OnMenuItemClickListener;
+import com.kongzue.dialog.util.TextInfo;
+import com.kongzue.dialog.v2.BottomMenu;
+import com.kongzue.dialog.v2.DialogSettings;
 
 import java.util.List;
 
@@ -25,6 +31,8 @@ import static androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CU
 import static com.dev.common.Constant.stateChanged;
 import static com.dev.common.constant.KeyConstant.REQUEST_CODE_PUBLISH_NEWS;
 import static com.dev.common.database.DaoProvider.newsDao;
+import static com.kongzue.dialog.v2.DialogSettings.STYLE_KONGZUE;
+import static com.kongzue.dialog.v2.DialogSettings.THEME_LIGHT;
 
 public class HomeFragment extends BaseFragment<HomeViewModel> {
 
@@ -46,20 +54,54 @@ public class HomeFragment extends BaseFragment<HomeViewModel> {
 
     @Override
     protected void setupViews() {
+        DialogSettings.style = STYLE_KONGZUE;
+        DialogSettings.tip_theme = THEME_LIGHT;
+        DialogSettings.use_blur=false;
+        DialogSettings.dialog_cancelable_default=true;
         binding.publish.setOnClickListener(v -> {
 //            ActivityRouter.gotoNewsPublishActivity(requireActivity(), REQUEST_CODE_PUBLISH_NEWS);
             if (UserSession.isLogin()) {
-                new MaterialAlertDialogBuilder(getContext())
-                        .setTitle("动态类型")
-                        .setPositiveButton("电影资讯，期刊，书籍等", (dialog, which) -> {
-                            ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "其他");
-                        })
-                        .setNegativeButton("提问", (dialog, which) -> {
-                            ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "提问");
-                        })
-                        .setNeutralButton("其他网站", (dialog, which) -> {
-                            ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "其他网站");
-                        }).show();
+//                List<String> list = new ArrayList<>();
+//                list.add("书籍分享");
+//                list.add("提问");
+//                list.add("闲置");
+//                list.add("其他");
+                BottomMenu.build((AppCompatActivity) getActivity(), new String[]{"书籍分享", "提问", "闲置", "其他"}, new OnMenuItemClickListener() {
+                    @Override
+                    public void onClick(String text, int index) {
+                        switch (index) {
+                            case 0:
+                                ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "书籍分享");
+                                break;
+                            case 1:
+                                ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "提问");
+
+                                break;
+                            case 2:
+                                ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "闲置");
+
+                                break;
+                            case 3:
+                                ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "其他");
+
+                                break;
+                        }
+                    }
+                }).setMenuTextInfo(new TextInfo().setGravity(Gravity.CENTER)).showDialog();
+//                new MaterialAlertDialogBuilder(getContext())
+//                        .setTitle("动态类型")
+//                        .setPositiveButton("               书籍分享", (dialog, which) -> {
+//                            ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "书籍分享");
+//                        })
+//                        .setNegativeButton("          提问", (dialog, which) -> {
+//                            ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "提问");
+//                        })
+//                        .setNeutralButton("闲置", (dialog, which) -> {
+//                            ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "闲置");
+//                        })
+//                        .setNeutralButton("其他", (dialog, which) -> {
+//                            ActivityRouter.gotoPublishActivity(requireActivity(), 1000, "其他");
+//                        }).show();
             } else {
                 Toast.makeText(requireContext(), "请先登录", Toast.LENGTH_SHORT).show();
             }

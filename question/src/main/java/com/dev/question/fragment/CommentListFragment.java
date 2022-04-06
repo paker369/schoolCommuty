@@ -51,7 +51,14 @@ public class CommentListFragment extends BaseFragment<QuestionViewModel> {
 
     @Override
     protected void initObserver() {
-        vm.myAnswer.observe(this, adapter::setData);
+        vm.myAnswer.observe(this,   comment -> {
+            if (comment == null || comment.size() == 0) {
+                binding.empty.setVisibility(View.VISIBLE);
+            } else {
+                binding.empty.setVisibility(View.GONE);
+            }
+            adapter.setData(comment);
+        });
         Constant.stateChanged.observe(this,o->{
             vm.loadAnswer();
         });

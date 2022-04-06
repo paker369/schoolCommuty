@@ -12,7 +12,7 @@ import java.util.List;
  * @since 1/30/21
  */
 @Dao
-public interface DynamicDao {
+public interface  DynamicDao {
     @Query("select * from dynamic")
     List<Dynamic> findAll();
 
@@ -30,4 +30,7 @@ public interface DynamicDao {
 
     @Query("select * from dynamic where  userId in (:ids)")
     List<Dynamic> findInIds(List<Long> ids);
+
+    @Query("select * from dynamic where  dynamicType in (:type)")
+    List<Dynamic> findByType(String type);
 }

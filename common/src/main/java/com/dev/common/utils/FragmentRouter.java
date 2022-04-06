@@ -19,9 +19,17 @@ public class FragmentRouter {
         return (Fragment) ARouterConstant.postcard(ARouterConstant.Main.dynamicFragment).withLong("userId", userId).navigation();
     }
 
+    public static Fragment dynamicFragment(String type) {
+        return (Fragment) ARouterConstant.postcard(ARouterConstant.Main.dynamicFragment).withString("type", type).navigation();
+    }
+
+
     public static Fragment dynamicFragment(long userId, boolean flower) {
         return (Fragment) ARouterConstant.postcard(ARouterConstant.Main.dynamicFragment).withLong("userId", userId).withBoolean("flower", flower).navigation();
     }
+
+
+
 
     public static Fragment newsFragment(String category) {
         return (Fragment) ARouterConstant.postcard(ARouterConstant.News.newsFragment).withString("category", category).navigation();

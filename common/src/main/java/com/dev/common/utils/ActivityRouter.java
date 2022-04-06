@@ -79,7 +79,9 @@ public class ActivityRouter {
     public static void gotoDynamicActivity() {
         ARouterConstant.startActivity(ARouterConstant.Main.dynamicActivity);
     }
-
+    public static void gotoShowActivity(int type) {
+        ARouterConstant.postcard(ARouterConstant.Main.ShowActivity).withInt("type", type).navigation();
+    }
     public static void gotoNewsDetailActivity(Long id) {
         ARouterConstant.postcard(ARouterConstant.News.newsDetailActivity).withSerializable("ownerId", id).navigation();
     }
