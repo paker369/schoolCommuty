@@ -16,7 +16,7 @@ import java.security.Key;
 public class SpUtil {
 
     private static SpUtil spUtil;
-
+    public static final String GONGGAO = "GONGGAO";
     public static final String KEY_PHONE_ADMIN = "key_phone_admin";
     public static final String KEY_USER_NAME_ADMIN = "key_user_name_admin";
     public static final String KEY_PASSWORD_ADMIN = "key_password_admin";

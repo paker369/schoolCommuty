@@ -68,14 +68,16 @@ public class FirstCommand {
             User user = new User("1833999291" + i, "123456", "", null, 1 + i, 1);
             users.add(user);
         }
+        User user = new User("17512822329", "123456", "李老八", null, 18, 0);
+        userDao().insert(user);
         userDao().insert(users);
     }
 
     private static void setupDynamic() {
         User admin = userDao().findAdmin();
         if (admin == null) return;
-        Dynamic bean1 = new Dynamic(admin.id, "欢迎使用", "欢迎使用欢迎使用欢迎使用欢迎使用", null);
-        Dynamic bean2 = new Dynamic(admin.id, "公告", "动态功能正式上线啦！！动态功能正式上线啦！！动态功能正式上线啦！！", null);
+        Dynamic bean1 = new Dynamic(admin.id, "欢迎使用", "欢迎使用欢迎使用欢迎使用欢迎使用", null,0,true);
+        Dynamic bean2 = new Dynamic(admin.id, "公告", "动态功能正式上线啦！！动态功能正式上线啦！！动态功能正式上线啦！！", null,0,true);
         dynamicDao().insert(bean1, bean2);
         List<Dynamic> dynamic = dynamicDao().findAll();
         for (Dynamic dynamic1 : dynamic) {

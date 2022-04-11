@@ -25,7 +25,7 @@ public class CommentViewModel extends BaseViewModel {
     }
 
     public void loadAllComment(long ownerId, int commentType) {
-        List<Comment> comments = commentDao().getCommentByOwnerIdAndType(ownerId, commentType);
+        List<Comment> comments = commentDao().getCommentByOwnerIdAndType(ownerId);
         List<CommentWithUser> result = new ArrayList<>();
         for (Comment comment : comments) {
             User user = userDao().findById(comment.userCreatorId);

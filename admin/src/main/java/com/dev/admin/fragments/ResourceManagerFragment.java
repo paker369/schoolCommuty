@@ -35,11 +35,11 @@ public class ResourceManagerFragment extends BaseFragment<ResourceManagerViewMod
     @Override
     protected void setupViewPager() {
         String[] titles = new String[]{"分享管理", "实时推送"};
-        Fragment[] fragments = new Fragment[2];
+        Fragment[] fragments = new Fragment[1];
         fragments[0] = ResourceChildFragment.newInstance(0);
-        fragments[1] = ResourceChildFragment.newInstance(1);
+//        fragments[1] = ResourceChildFragment.newInstance(1);
         binding.viewPager.setAdapter(new TabAdapter2(titles, fragments, getChildFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT));
-        binding.tabLayout.setupWithViewPager(binding.viewPager);
+//        binding.tabLayout.setupWithViewPager(binding.viewPager);
     }
 
     @Override

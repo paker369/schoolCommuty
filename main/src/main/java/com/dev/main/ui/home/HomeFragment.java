@@ -14,6 +14,7 @@ import com.dev.common.adapter.TabAdapter2;
 import com.dev.common.base.BaseFragment;
 import com.dev.common.utils.ActivityRouter;
 import com.dev.common.utils.FragmentRouter;
+import com.dev.common.utils.SpUtil;
 import com.dev.common.utils.data.ArrayList;
 import com.dev.main.R;
 import com.dev.main.databinding.FragmentHomeBinding;
@@ -54,10 +55,10 @@ public class HomeFragment extends BaseFragment<HomeViewModel> {
 
     @Override
     protected void setupViews() {
-        DialogSettings.style = STYLE_KONGZUE;
-        DialogSettings.tip_theme = THEME_LIGHT;
-        DialogSettings.use_blur=false;
-        DialogSettings.dialog_cancelable_default=true;
+//        DialogSettings.style = STYLE_KONGZUE;
+//        DialogSettings.tip_theme = THEME_LIGHT;
+//        DialogSettings.use_blur=false;
+//        DialogSettings.dialog_cancelable_default=true;
         binding.publish.setOnClickListener(v -> {
 //            ActivityRouter.gotoNewsPublishActivity(requireActivity(), REQUEST_CODE_PUBLISH_NEWS);
             if (UserSession.isLogin()) {
@@ -143,6 +144,7 @@ public class HomeFragment extends BaseFragment<HomeViewModel> {
         fragments[2] = FragmentRouter.dynamicFragment(-1, true);
         binding.viewPager.setAdapter(new TabAdapter2(titles, fragments, getChildFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT));
         binding.tabLayout.setupWithViewPager(binding.viewPager);
+        binding.gg.setText(SpUtil.getInstance().getString(SpUtil.GONGGAO));
         stateChanged.setValue(true);
     }
 

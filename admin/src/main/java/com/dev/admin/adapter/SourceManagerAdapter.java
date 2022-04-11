@@ -13,6 +13,7 @@ import com.dev.common.database.dynamic.Dynamic;
 import com.dev.common.database.user.User;
 import com.dev.common.utils.DateUtil;
 import com.dev.main.R;
+import com.dev.main.databinding.ItemDynamic1Binding;
 import com.dev.main.databinding.ItemDynamicBinding;
 
 import java.util.List;
@@ -30,16 +31,19 @@ public class SourceManagerAdapter extends RecyclerView.Adapter<SourceManagerAdap
     public OnItemClickListener onItemClickListener;
     private List<Dynamic> dynamics;
     private final static Map<Long, User> map = new TreeMap<>();
+    public DynamicClickListener l;
 
     public void setData(List<Dynamic> list) {
         this.dynamics = list;
         notifyDataSetChanged();
     }
-
+    public void setListener(DynamicClickListener l) {
+        this.l = l;
+    }
     @NonNull
     @Override
     public DynamicVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        DynamicVH vh = new DynamicVH(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dynamic, parent, false));
+        DynamicVH vh = new DynamicVH(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dynamic1, parent, false));
         vh.itemView.setOnClickListener(v -> {
             if (onItemClickListener != null)
                 onItemClickListener.onItemClick(v, vh.getAdapterPosition());
@@ -63,12 +67,14 @@ public class SourceManagerAdapter extends RecyclerView.Adapter<SourceManagerAdap
         map.clear();
     }
 
-    static class DynamicVH extends RecyclerView.ViewHolder {
+     class DynamicVH extends RecyclerView.ViewHolder {
 
-        ItemDynamicBinding binding = ItemDynamicBinding.bind(itemView);
+        ItemDynamic1Binding binding = ItemDynamic1Binding.bind(itemView);
 
         public DynamicVH(@NonNull View itemView) {
             super(itemView);
+            binding.tvTop.setOnClickListener(v -> l.updateClick(dynamics.get(getAdapterPosition())));
+            binding.tvDelete.setOnClickListener(v -> l.deleteClick(dynamics.get(getAdapterPosition())));
         }
 
         public void bind(Dynamic dynamic) {
@@ -88,7 +94,7 @@ public class SourceManagerAdapter extends RecyclerView.Adapter<SourceManagerAdap
             binding.userName.setText(bean.nickName);
             binding.title.setText(dynamic.title);
             binding.content.setText(dynamic.content);
-
+            binding.tvTop.setText(dynamic.top==0?"取消置顶":"置顶");
             if (dynamic.attachment != null) {
                 binding.attachment.setVisibility(View.VISIBLE);
                 Glide.with(itemView.getContext()).load(dynamic.attachment).into(binding.attachment);
@@ -98,5 +104,13 @@ public class SourceManagerAdapter extends RecyclerView.Adapter<SourceManagerAdap
             binding.time.setText(DateUtil.toTime(dynamic.createTime));
             binding.type.setText(dynamic.dynamicType);
         }
+    }
+
+    public interface DynamicClickListener {
+
+
+        void updateClick(Dynamic  dynamic);
+
+        void deleteClick(Dynamic  dynamic);
     }
 }

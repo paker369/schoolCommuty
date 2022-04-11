@@ -24,10 +24,12 @@ import com.dev.common.base.BaseActivity;
 import com.dev.common.constant.ARouterConstant;
 import com.dev.common.database.dynamic.Dynamic;
 import com.dev.common.database.question.Question;
+import com.dev.common.utils.SpUtil;
 import com.dev.main.R;
 import com.dev.main.databinding.ActivityPublishBinding;
 import com.dev.user.UserSession;
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
+import com.suke.widget.SwitchButton;
 
 import static com.dev.common.database.DaoProvider.dynamicDao;
 import static com.dev.common.database.DaoProvider.questionDao;
@@ -41,6 +43,7 @@ public class PublishActivity extends BaseActivity<InsertViewModel> {
 
     @Autowired(name = "dynamicType")
     String dynamicType = "动态";
+    private boolean show;
 
     @Override
     protected void initWindow() {
@@ -60,11 +63,36 @@ public class PublishActivity extends BaseActivity<InsertViewModel> {
         binding = ActivityPublishBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
-
+    private boolean isTop=false;
     @Override
     protected void setupViews() {
         setupTypes();
         setupToolbar(binding.toolbar);
+        if( UserSession.getInstance().isAdmin()){
+            binding.switch1.setVisibility(View.VISIBLE);
+            binding.shifou.setVisibility(View.VISIBLE);
+            binding.switch2.setVisibility(View.VISIBLE);
+            binding.gonggao.setVisibility(View.VISIBLE);
+        }else {
+            binding.switch1.setVisibility(View.GONE);
+            binding.shifou.setVisibility(View.GONE);
+            binding.switch2.setVisibility(View.GONE);
+            binding.gonggao.setVisibility(View.GONE);
+        }
+        binding.switch1.setChecked(false);
+        binding. switch1.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
+              isTop=isChecked;
+            }
+        });
+        binding.switch2.setChecked(false);
+        binding. switch2.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
+                show=isChecked;
+            }
+        });
         binding.btnPublish.setOnClickListener(v -> {
             if (binding.title.getText() == null || binding.title.getText().length() == 0) {
                 Toast.makeText(this, "标题不能为空", Toast.LENGTH_SHORT).show();
@@ -83,12 +111,16 @@ public class PublishActivity extends BaseActivity<InsertViewModel> {
                         UserSession.getInstance().id(),
                         binding.title.getText().toString(),
                         binding.content.getText().toString(),
-                        attachment);
+                        attachment,isTop?0:1,UserSession.getInstance().isAdmin()
+                );
                 bean.dynamicType = this.dynamicType;
                 dynamicDao().insert(bean);
             }
             Toast.makeText(this, "发布成功", Toast.LENGTH_SHORT).show();
             setResult(RESULT_OK);
+            if(show){
+                SpUtil.getInstance().save(SpUtil.GONGGAO, binding.content.getText().toString());
+            }
             finish();
         });
 

@@ -82,7 +82,8 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.DynamicV
             if (bean == null) {
                 return;
             }
-
+            binding.tvAdmin.setVisibility(dynamic.isAdmin  ?View.VISIBLE:View.INVISIBLE);
+            binding.tvTop.setVisibility(dynamic.top==0  ?View.VISIBLE:View.INVISIBLE);
             int holder = bean.gender == 0 ? R.drawable.ic_user_head_body : R.drawable.ic_user_head_girl;
             Glide.with(itemView.getContext()).load(bean.headImage).error(holder).into(binding.headImage);
             binding.userName.setText(bean.nickName);

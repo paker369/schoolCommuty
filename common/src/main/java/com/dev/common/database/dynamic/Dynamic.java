@@ -15,17 +15,31 @@ public class Dynamic {
     public long userId;
     public String title;
     public String content;
-    public String attachment;
     public long createTime;
+    //附件
+    public String attachment;
+    //是否置顶
+    public int top=1;
+    //是否管理员
+    public boolean isAdmin;
+    public String dynamicType = "其他";
 
-    public String dynamicType = "动态";
-
-    public Dynamic(long userId, String title, String content, String attachment) {
+    public Dynamic(long userId, String title, String content, String attachment,int top,boolean isAdmin) {
         this.userId = userId;
         this.title = title;
         this.content = content;
         this.attachment = attachment;
+        this.top = top;
+        this.isAdmin = isAdmin;
         createTime = System.currentTimeMillis();
+    }
+
+    public int isTop() {
+        return top;
+    }
+
+    public void setTop(int top) {
+        this.top = top;
     }
 
     @Override

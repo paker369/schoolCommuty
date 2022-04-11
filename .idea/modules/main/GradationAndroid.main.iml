@@ -160,6 +160,7 @@
     <orderEntry type="library" name="Gradle: com.scwang.smartrefresh:SmartRefreshLayout:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.tbruyelle:rxpermissions:0.10.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.kongzue.dialog:dialog:2.5.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.zcweng:switch-button:0.0.3@aar" level="project" />
     <orderEntry type="module" module-name="GradationAndroid.news" />
     <orderEntry type="module" module-name="GradationAndroid.forum" />
     <orderEntry type="module" module-name="GradationAndroid.question" />

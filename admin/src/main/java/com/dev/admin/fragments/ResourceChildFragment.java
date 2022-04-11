@@ -1,5 +1,8 @@
 package com.dev.admin.fragments;
 
+import static com.dev.common.database.DaoProvider.dynamicDao;
+import static com.dev.common.database.DaoProvider.userDao;
+
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -19,6 +22,7 @@ import com.dev.admin.viewmodel.ResourceManagerViewModel;
 import com.dev.common.adapter.OnItemClickListener;
 import com.dev.common.base.BaseFragment;
 import com.dev.common.database.dynamic.Dynamic;
+import com.dev.common.database.dynamic.DynamicDao;
 
 /**
  * @author long.guo
@@ -54,9 +58,20 @@ public class ResourceChildFragment extends BaseFragment<ResourceManagerViewModel
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void setupViews() {
-        if (position == 1) {
-            binding.text.setText("点击推送资源");
-        }
+        adapter.setListener(new SourceManagerAdapter.DynamicClickListener() {
+            @Override
+            public void updateClick(Dynamic dynamic) {
+                dynamic.setTop(dynamic.top==1?0:1);
+                dynamicDao().updateUser(dynamic);
+                vm.loadDynamic();
+            }
+
+            @Override
+            public void deleteClick(Dynamic dynamic) {
+                dynamicDao().deleteUser(dynamic);
+                vm.loadDynamic();
+            }
+        });
 
         adapter.onItemClickListener = (view, position) -> {
             Dynamic dynamic = vm.dynamicList.getValue().get(position);

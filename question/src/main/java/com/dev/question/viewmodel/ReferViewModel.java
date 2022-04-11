@@ -29,7 +29,7 @@ public class ReferViewModel extends BaseViewModel {
         List<String> str = new ArrayList<>();
         List<Dynamic> dynamics = dynamicDao().findAllByUserId(UserSession.getInstance().id());
         for (Dynamic dynamic : dynamics) {
-            List<Comment> comments = commentDao().getCommentByOwnerIdAndType(dynamic.id, Comment.DynamicType);
+            List<Comment> comments = commentDao().getCommentByOwnerIdAndType(dynamic.id);
             List<Like> likes = likeDao().getLikeByOwnerIdAndType(dynamic.id, Comment.DynamicType);
             for (Comment comment : comments) {
                 User user = userDao().findById(comment.userCreatorId);

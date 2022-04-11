@@ -32,7 +32,7 @@ public class QuestionViewModel extends BaseDetailViewModel {
     }
 
     public void loadAnswer() {
-        myAnswer.setValue(commentDao().getCommentByOwnerIdAndType(UserSession.getInstance().id(), Comment.QuestionType));
+        myAnswer.setValue(commentDao().getCommentByOwnerIdAndType(UserSession.getInstance().id()));
     }
 
     public void loadAllQuestions() {

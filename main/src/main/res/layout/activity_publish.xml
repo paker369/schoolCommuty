@@ -48,6 +48,7 @@
             android:text="电影资讯" />
     </RadioGroup>
 
+
     <EditText
         android:id="@+id/title"
         android:layout_width="0dp"
@@ -128,4 +129,50 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/shifou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:paddingTop="5dp"
+        android:text="置顶"
+        app:layout_constraintStart_toEndOf="@+id/btnPublish"
+        app:layout_constraintTop_toBottomOf="@+id/switch_1" />
+
+    <com.suke.widget.SwitchButton
+        android:id="@+id/switch_1"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toEndOf="@+id/btnPublish"
+        app:layout_constraintTop_toTopOf="@+id/btnPublish"
+        android:layout_marginTop="10dp"
+        app:sb_checked_color="@color/colorAccent"
+        app:sb_show_indicator="false"
+        app:sb_uncheck_color="#CFCFCF" />
+
+
+    <TextView
+        android:id="@+id/gonggao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:paddingTop="5dp"
+        android:text="设为公告"
+        app:layout_constraintEnd_toStartOf="@+id/btnPublish"
+        app:layout_constraintTop_toBottomOf="@+id/switch_2" />
+
+    <com.suke.widget.SwitchButton
+        android:id="@+id/switch_2"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnPublish"
+        app:layout_constraintTop_toTopOf="@+id/btnPublish"
+        app:sb_checked_color="@color/colorAccent"
+        app:sb_show_indicator="false"
+        app:sb_uncheck_color="#CFCFCF" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

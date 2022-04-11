@@ -50,10 +50,16 @@ public class SplashActivity extends BaseActivity<SplashViewModel> {
 //        Fragment fragment = FragmentRouter.dynamicFragment(UserSession.getInstance().id());
 //        getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, fragment).commitAllowingStateLoss();
         String url = "file:///android_asset/animation.gif";
+        String url2 = "file:///android_asset/welcome.gif";
         Glide.with(this)
                 .asGif()
                 .load(url)
                 .into(binding.image);
+        Glide.with(this)
+                .asGif()
+                .load(url2)
+                .into(binding.image2);
+
     }
 
     @Override

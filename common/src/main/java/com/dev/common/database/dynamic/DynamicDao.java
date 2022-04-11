@@ -1,9 +1,13 @@
 package com.dev.common.database.dynamic;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
+
+import com.dev.common.database.user.User;
 
 import java.util.List;
 
@@ -13,7 +17,7 @@ import java.util.List;
  */
 @Dao
 public interface  DynamicDao {
-    @Query("select * from dynamic")
+    @Query("select * from dynamic order by top")
     List<Dynamic> findAll();
 
     @Query("select * from dynamic where userId = :userId")
@@ -33,4 +37,11 @@ public interface  DynamicDao {
 
     @Query("select * from dynamic where  dynamicType in (:type)")
     List<Dynamic> findByType(String type);
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    void updateUser(Dynamic dynamic);
+
+
+    @Delete
+    void deleteUser(Dynamic dynamic);
 }

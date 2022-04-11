@@ -30,12 +30,12 @@ public class LoginSelectActivity extends BaseActivity<ViewModel> {
         setupToolbar(binding.toolbar);
         binding.adminButton.setOnClickListener(v -> {
             ActivityRouter.gotoLoginActivity(true);
-            finish();
+//            finish();
         });
 
         binding.normalButton.setOnClickListener(v -> {
             ActivityRouter.gotoLoginActivity(false);
-            finish();
+//            finish();
         });
     }
 

@@ -5,21 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
-    android:layout_marginLeft="6dp"
-    android:layout_marginRight="6dp"
+    android:layout_marginLeft="9dp"
+    android:layout_marginRight="9dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp"
+        android:paddingBottom="5dp"
      >
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/headImage"
             android:layout_width="26dp"
             android:layout_height="26dp"
+            android:layout_marginTop="5dp"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -27,6 +28,7 @@
 
         <TextView
             android:id="@+id/userName"
+            android:layout_marginTop="5dp"
             style="?attr/textAppearanceHeadline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,6 +42,7 @@
 
         <TextView
             android:id="@+id/type"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="6dp"
@@ -102,9 +105,43 @@
             android:layout_marginTop="4dp"
             android:textColor="#333"
             android:textSize="12sp"
+            android:layout_marginBottom="5dp"
             app:layout_constraintStart_toStartOf="@+id/content"
             app:layout_constraintTop_toBottomOf="@+id/attachment"
             tools:text="2020年1月2号12:32" />
+
+        <TextView
+            android:id="@+id/tv_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF0000"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+           android:text="管理员" />
+        <TextView
+            android:id="@+id/tv_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:background="@color/colorAccent"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintRight_toLeftOf="@+id/tv_admin"
+            app:layout_constraintTop_toTopOf="@+id/tv_admin"
+            android:text="置顶" />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
