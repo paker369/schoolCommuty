@@ -13,6 +13,8 @@ import java.util.List;
 import static com.dev.common.database.DaoProvider.commentDao;
 import static com.dev.common.database.DaoProvider.questionDao;
 
+import android.util.Log;
+
 /**
  * @author long.guo
  * @since 2/8/21
@@ -33,6 +35,12 @@ public class QuestionViewModel extends BaseDetailViewModel {
 
     public void loadAnswer() {
         myAnswer.setValue(commentDao().getCommentByOwnerIdAndType(UserSession.getInstance().id()));
+        Log.d("洒水", "loadAnswer: "+commentDao().getCommentByOwnerIdAndType(UserSession.getInstance().id()).size());
+    }
+
+    public void loadMyAnswer() {
+        myAnswer.setValue(commentDao().getCommentByreat(UserSession.getInstance().id()));
+        Log.d("洒水", "loadAnswer: "+commentDao().getCommentByreat(UserSession.getInstance().id()).size());
     }
 
     public void loadAllQuestions() {

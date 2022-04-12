@@ -22,8 +22,13 @@ public interface CommentDao {
     long insert(Comment comment);
 
     @Query("select * from comment where ownerId = :ownerId order by createTime")
-    List<Comment>
-    getCommentByOwnerIdAndType(long ownerId);
+    List<Comment> getCommentByOwnerIdAndType(long ownerId);
+
+
+
+    @Query("select * from comment where userCreatorId = :userCreatorId order by createTime")
+    List<Comment> getCommentByreat(long userCreatorId);
+
 
     /**
      * 去重查询user 的所有评论对应的ownerId和ownerType

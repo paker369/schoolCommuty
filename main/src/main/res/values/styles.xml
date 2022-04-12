@@ -17,6 +17,8 @@
 
 
     </style>
+
+
     <style name="Theme_dialog" parent="@android:style/Theme.Dialog">
 
         <!-- 边框 -->

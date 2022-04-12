@@ -36,12 +36,12 @@ public class CommentListFragment extends BaseFragment<QuestionViewModel> {
     @Override
     public void onResume() {
         super.onResume();
-        vm.loadAnswer();
+        vm.loadMyAnswer();
     }
 
     @Override
     protected void initData() {
-        vm.loadAnswer();
+        vm.loadMyAnswer();
     }
 
     @Override
@@ -60,7 +60,7 @@ public class CommentListFragment extends BaseFragment<QuestionViewModel> {
             adapter.setData(comment);
         });
         Constant.stateChanged.observe(this,o->{
-            vm.loadAnswer();
+            vm.loadMyAnswer();
         });
     }
 }

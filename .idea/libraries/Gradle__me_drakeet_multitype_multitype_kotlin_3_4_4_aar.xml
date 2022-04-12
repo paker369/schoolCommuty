@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f7c83108228d68bdc22a51089bfe69da/jetified-multitype-kotlin-3.4.4/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f7c83108228d68bdc22a51089bfe69da/jetified-multitype-kotlin-3.4.4/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f7c83108228d68bdc22a51089bfe69da/jetified-multitype-kotlin-3.4.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6c6646b0842b5f5e90707e8b1e69106e/jetified-multitype-kotlin-3.4.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6c6646b0842b5f5e90707e8b1e69106e/jetified-multitype-kotlin-3.4.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6c6646b0842b5f5e90707e8b1e69106e/jetified-multitype-kotlin-3.4.4/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.drakeet.multitype/multitype-kotlin/3.4.4/abef064b0d0da08ad2c5bfc4deead2a7db508558/multitype-kotlin-3.4.4-javadoc.jar!/" />
